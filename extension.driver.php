@@ -192,7 +192,7 @@ class extension_Limit_Section_Entries extends Extension
         $callback = Administration::instance()->getPageCallback();
 
         // manipulate success message
-        if (in_array($callback['context']['page'], array('new', 'edit'))) {
+        if (in_array($callback['context']['page'] ?? null, array('new', 'edit'))) {
             $flag_create = false;
             $flag_all = false;
 
