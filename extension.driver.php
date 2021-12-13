@@ -326,7 +326,9 @@ class extension_Limit_Section_Entries extends Extension
 /*------------------------------------------------------------------------------------------------*/
 
     public function dAddSectionElements($context)
-    {
+    {   
+        $context['meta']['max_entries'] = $context['meta']['max_entries'] ?? null;
+        
         $fieldset = new XMLElement('fieldset', null, array('class' => 'settings'));
         $legend = new XMLElement('legend', __('Limit Section Entries'));
         $label = Widget::Label(__('Maximum entries'));
