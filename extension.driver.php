@@ -374,7 +374,10 @@ class extension_Limit_Section_Entries extends Extension
     }
 
     private function _fetchUrlParams()
-    {
+    {   
+        
+        static $params;
+        
         if (count($_GET) > 2) {
             $params = "?";
         }
