@@ -385,9 +385,11 @@ class extension_Limit_Section_Entries extends Extension
         }
 
         foreach ($_GET as $key => $value) {
-            if (in_array($key, array('symphony-page', 'mode'))) {
+            if (in_array($key, array('symphony-page', 'mode')) || $key == 'filter') {
                 continue;
             }
+
+            if (is_array($value)) $value = reset($value);
 
             $params .= "{$key}={$value}";
             if (next($_GET)) {
